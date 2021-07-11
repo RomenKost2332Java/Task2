@@ -3,12 +3,9 @@ package com.main;
 import java.util.Arrays;
 
 public class Main {
-    private static final int size = 9; // initialization of constant.
 
     public static void main(String[] args) {
-        double[] array = new double[size]; // creating new empty array.
-
-        fillRandomNumbers(array);
+        double[] array = createRandomArray(9);
         System.out.println("Unsorted array: " + Arrays.toString(array)); // displaying unsorted array.
 
         Sorter sorter = new Sorter();
@@ -24,9 +21,11 @@ public class Main {
         }
     }
 
-    private static void fillRandomNumbers(double[] array){
+    private static double[] createRandomArray(int size){
+        double[] array = new double[size]; // creating new empty array.
         for(int i = 0; i<array.length; i++) // filling array by random numbers.
             array[i] = Math.random()/Math.random(); // every real positive number is a/b, where a, b from (0;1).
+        return array;
     }
 
 
